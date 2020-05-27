@@ -7,15 +7,20 @@
   <title>lab1_Edler_7161340</title>
 </head>  
 <body>
+	<h2> Thank you for participating in a short survey about the Website: </h2>
+	<a href= "https://www.kijiji.com" >
+		kijiji.com
+	</a><br><br>
 	<form  action="index.php" name="questionnaire" method = "POST">
 	 First name: <input type = "text" name = "firstname"><br>
 	 Second name: <input type = "text" name = "secondname"><br><br>
 	 
 	 How often do you use the website: wwww.kijiji.ca?<br>
-	 <input type="radio"name="usage"value="never">Never<br>
-	 <input type="radio"name="usage"value="barely">Barely<br>
-	 <input type="radio"name="usage"value="Sometimes">Sometimes<br>
-	 <input type="radio"name="usage"value="often">Often<br><br>
+	 <select name= "usage">
+	 <option value="barely" selected="selected">Barely</option>
+	 <option value="Sometimes">Sometimes</option>
+	 <option value="often">Often</option>
+	 </select><br><br>
 	 How easy is it to find what you are looking for?<br>
 	 <input type="radio"name="easy"value="very easy">Very easy<br>
 	 <input type="radio"name="easy"value="fairly easy">Fairly easy<br>
@@ -31,7 +36,11 @@
 	 <input type="radio"name="arranged"value="Acceptable">Acceptable<br>
 	 <input type="radio"name="arranged"value="Disturbing">Disturbing<br>
 	 <input type="radio"name="arranged"value="Annoying">Annoying<br><br>
-	 What is it, if any, that you like most about the website?<br>
+	 What items dou you look for most in the website?<br>
+	 <input type="checkbox"name="Real state"value="Real state">Real state<br>
+	 <input type="checkbox"name="Cars"value="Cars">Cars<br>
+	 <input type="checkbox"name="Computers and labtops"value="Computers and labtops">Computers and labtops<br>
+	 <input type="checkbox"name="Others"value="Others">Others. Please specify: <br>
 	 <textarea rows="5" cols="30">
 	 </textarea><br>
 	 What is it, if any, that you hate most about the website!<br>
@@ -42,5 +51,8 @@
 	 <input type="submit" value="submit the Questionnaire"/>
 	 
 	</form>
+	<footer>
+	  <p>(Website designed by Bryan Edler)</p>
+	</footer>
 </body>
 </html>
