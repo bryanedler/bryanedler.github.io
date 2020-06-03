@@ -1,55 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>lab1_Edler_7161340</title>
-</head>  
+	Welcome to The GroSary Store!<br><br>
+	<! This style sheet is taken from  https://www.w3schools.com/howto/howto_js_tabs.asp>
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
 <body>
-	<h2> Thank you for participating in a short survey about the Website: </h2>
-	<a href= "https://www.kijiji.com" >
-		kijiji.com
-	</a><br><br>
-	<form  action="index.php" name="questionnaire" method = "POST">
-	 First name: <input type = "text" name = "firstname"><br>
-	 Second name: <input type = "text" name = "secondname"><br><br>
-	 
-	 How often do you use the website: wwww.kijiji.ca?<br>
-	 <select name= "usage">
-	 <option value="barely" selected="selected">Barely</option>
-	 <option value="Sometimes">Sometimes</option>
-	 <option value="often">Often</option>
-	 </select><br><br>
-	 How easy is it to find what you are looking for?<br>
-	 <input type="radio"name="easy"value="very easy">Very easy<br>
-	 <input type="radio"name="easy"value="fairly easy">Fairly easy<br>
-	 <input type="radio"name="easy"value="difficult">Difficult<br>
-	 <input type="radio"name="easy"value="vey difficult">Vey difficult<br><br>
-	 The filter option is<br>
-	 <input type="radio"name="option"value="Helpful">Helpful<br>
-	 <input type="radio"name="option"value="Helpful, but could be better">Helpful, but could be better<br>
-	 <input type="radio"name="option"value="Not helpful">Not helpful<br>
-	 <input type="radio"name="option"value="Too complicated">Too complicated<br><br>
-	 The way search items are arranged is <br>
-	 <input type="radio"name="arranged"value="To my appealing">To my appealing<br>
-	 <input type="radio"name="arranged"value="Acceptable">Acceptable<br>
-	 <input type="radio"name="arranged"value="Disturbing">Disturbing<br>
-	 <input type="radio"name="arranged"value="Annoying">Annoying<br><br>
-	 What items dou you look for most in the website?<br>
-	 <input type="checkbox"name="Real state"value="Real state">Real state<br>
-	 <input type="checkbox"name="Cars"value="Cars">Cars<br>
-	 <input type="checkbox"name="Computers and labtops"value="Computers and labtops">Computers and labtops<br>
-	 <input type="checkbox"name="Others"value="Others">Others. Please specify: <br>
-	 <textarea rows="5" cols="30">
-	 </textarea><br>
-	 What is it, if any, that you hate most about the website!<br>
-	 <textarea rows="5" cols="30">
-	 </textarea><br>
-	
-	 
-	 <input type="submit" value="submit the Questionnaire"/>
-	 
-	</form>
-	<footer>
+
+<!-- Tab links, each one with an onclick event associated with it -->
+<div class="tab">
+  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
+  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
+  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+</div>
+
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+	Choose a Category:
+	<select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
+	<option value=""></option>
+	<option value="Vegetarian">Vegetarian</option>
+	<option value="Organic">Organic</option>
+    <option value="GlutenFree">GlutenFree</option>
+    <option value="None">None</option>
+	</select>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Your targeted products</h3>
+  <p>We preselected products based on your restrictions.</p>
+	 Choose items to buy:
+	 <div id="displayProduct"></div>
+	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
+		Add selected items to cart.
+	</button>
+</div>
+
+<div id="Cart" class="tabcontent">
+  <h3>Cart</h3>
+  <p>Here is your cart.</p>
+  <div id="displayCart"></div>
+</div>
+
+<script src="scripts/groceries.js"></script>
+<script src="scripts/main.js"></script>
+<footer>
 	  <p>(Website designed by Bryan Edler)</p>
 	</footer>
 </body>
